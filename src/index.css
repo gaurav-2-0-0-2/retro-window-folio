@@ -45,14 +45,6 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* 90s Anime Tech Colors */
-    --neon-cyan: 0 255 255;
-    --neon-magenta: 255 0 255;
-    --neon-green: 0 255 0;
-    --neon-blue: 0 191 255;
-    --dark-bg: 8 8 20;
-    --grid-color: 0 255 255;
   }
 
   .dark {
@@ -100,233 +92,56 @@
   }
 
   body {
-    @apply font-orbitron text-white;
-    background: linear-gradient(135deg, rgb(var(--dark-bg)) 0%, #0a0a2e 50%, #16213e 100%);
+    @apply bg-retro-gray text-foreground font-terminus;
+    background: linear-gradient(135deg, #c0c0c0 0%, #b0b0b0 100%);
     min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      linear-gradient(rgba(var(--grid-color), 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(var(--grid-color), 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(var(--neon-cyan), 0.03) 2px,
-      rgba(var(--neon-cyan), 0.03) 4px
-    );
-    pointer-events: none;
-    z-index: 2;
   }
 }
 
-/* 90s Anime Tech UI Elements */
+/* 90s UI Elements */
 @layer components {
-  .anime-window {
-    @apply bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-sm border-2;
-    border-color: rgb(var(--neon-cyan));
-    box-shadow: 
-      0 0 20px rgba(var(--neon-cyan), 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    position: relative;
+  .retro-window {
+    @apply bg-retro-window border-2;
+    border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .retro-button {
+    @apply px-4 py-2 bg-retro-gray border-2 font-terminus text-sm font-medium;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    transition: all 0.1s ease;
+  }
+
+  .retro-button:hover {
+    @apply bg-gray-200;
+  }
+
+  .retro-button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    @apply bg-gray-300;
+  }
+
+  .retro-tab {
+    @apply px-4 py-2 bg-retro-gray border-2 font-terminus text-sm font-medium cursor-pointer;
+    border-color: #ffffff #808080 transparent #ffffff;
+    border-bottom: none;
+    margin-bottom: -2px;
+    transition: all 0.2s ease;
+  }
+
+  .retro-tab.active {
+    @apply bg-retro-window;
+    border-color: #ffffff #808080 #f0f0f0 #ffffff;
     z-index: 10;
+    position: relative;
   }
 
-  .anime-window::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      45deg,
-      transparent 30%,
-      rgba(var(--neon-cyan), 0.05) 50%,
-      transparent 70%
-    );
-    pointer-events: none;
-  }
-
-  .anime-button {
-    @apply px-6 py-3 font-orbitron text-sm font-bold uppercase tracking-wider relative overflow-hidden;
-    background: linear-gradient(45deg, #1a1a2e, #16213e);
-    border: 2px solid rgb(var(--neon-cyan));
-    color: rgb(var(--neon-cyan));
-    transition: all 0.3s ease;
-    text-shadow: 0 0 10px rgba(var(--neon-cyan), 0.5);
-  }
-
-  .anime-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(var(--neon-cyan), 0.2),
-      transparent
-    );
-    transition: left 0.5s;
-  }
-
-  .anime-button:hover {
-    box-shadow: 
-      0 0 20px rgba(var(--neon-cyan), 0.5),
-      inset 0 0 20px rgba(var(--neon-cyan), 0.1);
-    transform: translateY(-2px);
-  }
-
-  .anime-button:hover::before {
-    left: 100%;
-  }
-
-  .anime-tab {
-    @apply px-6 py-3 font-orbitron text-sm font-bold uppercase tracking-wider cursor-pointer relative;
-    background: linear-gradient(45deg, #1a1a2e, #16213e);
-    border: 2px solid transparent;
-    color: rgba(var(--neon-cyan), 0.7);
-    transition: all 0.3s ease;
-    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-    margin-right: 5px;
-  }
-
-  .anime-tab.active {
-    border-color: rgb(var(--neon-cyan));
-    color: rgb(var(--neon-cyan));
-    background: linear-gradient(45deg, #0f3460, #16213e);
-    box-shadow: 0 0 15px rgba(var(--neon-cyan), 0.3);
-    text-shadow: 0 0 10px rgba(var(--neon-cyan), 0.5);
-  }
-
-  .anime-tab:hover:not(.active) {
-    color: rgb(var(--neon-cyan));
-    border-color: rgba(var(--neon-cyan), 0.5);
-  }
-
-  .terminal-screen {
-    @apply font-fira-code bg-black/90 backdrop-blur-sm border-2 rounded-lg overflow-hidden;
-    border-color: rgb(var(--neon-green));
-    box-shadow: 
-      0 0 20px rgba(var(--neon-green), 0.3),
-      inset 0 0 50px rgba(var(--neon-green), 0.1);
+  .retro-tab:hover:not(.active) {
+    @apply bg-gray-200;
   }
 
   .terminal-text {
-    @apply font-fira-code p-6;
-    color: rgb(var(--neon-green));
-    text-shadow: 0 0 10px rgba(var(--neon-green), 0.5);
-    background: 
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 20px,
-        rgba(var(--neon-green), 0.03) 20px,
-        rgba(var(--neon-green), 0.03) 22px
-      );
-  }
-
-  .project-card {
-    @apply relative overflow-hidden backdrop-blur-sm border-2 rounded-lg p-6;
-    background: linear-gradient(135deg, rgba(30, 30, 60, 0.8), rgba(20, 20, 40, 0.9));
-    border-color: rgb(var(--neon-magenta));
-    box-shadow: 0 0 15px rgba(var(--neon-magenta), 0.2);
-    transition: all 0.3s ease;
-  }
-
-  .project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgb(var(--neon-magenta)),
-      transparent
-    );
-  }
-
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(var(--neon-magenta), 0.3);
-    border-color: rgb(var(--neon-cyan));
-  }
-
-  .skill-chip {
-    @apply px-3 py-1 text-xs font-orbitron font-bold uppercase tracking-wider;
-    background: linear-gradient(45deg, #1a1a2e, #16213e);
-    border: 1px solid rgb(var(--neon-blue));
-    color: rgb(var(--neon-blue));
-    clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
-    text-shadow: 0 0 5px rgba(var(--neon-blue), 0.5);
-  }
-
-  .neon-glow {
-    text-shadow: 
-      0 0 5px currentColor,
-      0 0 10px currentColor,
-      0 0 15px currentColor;
-  }
-
-  .scan-line {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .scan-line::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(var(--neon-cyan), 0.8),
-      transparent
-    );
-    animation: scan 3s linear infinite;
-  }
-
-  @keyframes scan {
-    0% { left: -100%; }
-    100% { left: 100%; }
-  }
-
-  @keyframes pulse-neon {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-  }
-
-  .pulse-neon {
-    animation: pulse-neon 2s ease-in-out infinite;
+    @apply font-terminus text-green-400 bg-black p-4 rounded;
+    font-family: 'JetBrains Mono', monospace;
   }
 }

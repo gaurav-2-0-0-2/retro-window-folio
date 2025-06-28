@@ -4,60 +4,51 @@ import WindowFrame from '../components/WindowFrame';
 import TabNavigation from '../components/TabNavigation';
 import TerminalSection from '../components/TerminalSection';
 import ProjectCard from '../components/ProjectCard';
-import { User, Mail, Home, Monitor, Github, Linkedin, Twitter, Code, Zap, Cpu, HardDrive, Wifi } from 'lucide-react';
+import { User, Mail, Home, Monitor, Github, Linkedin, Twitter, Code } from 'lucide-react';
 
 const Index = () => {
   const tabs = [
     {
       id: 'home',
-      label: 'System',
-      icon: <Cpu size={16} />,
+      label: 'Home',
+      icon: <Home size={14} />,
       content: (
-        <TerminalSection title="Neural Interface">
-          <div className="space-y-8">
+        <TerminalSection title="Welcome">
+          <div className="space-y-6">
             <div className="text-center">
-              <h1 className="font-orbitron text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-4 neon-glow tracking-wider">
-                CYBER_DEV.EXE
+              <h1 className="font-terminus text-4xl font-bold text-retro-darkblue mb-2">
+                John Developer
               </h1>
-              <p className="text-2xl text-cyan-300 font-orbitron font-bold uppercase tracking-widest">
-                Neural Network Developer
+              <p className="text-xl text-retro-darkgray font-terminus">
+                Full Stack Developer & UI/UX Designer
               </p>
-              <div className="mt-4 flex justify-center items-center gap-4">
-                <div className="w-2 h-2 bg-green-400 rounded-full pulse-neon"></div>
-                <span className="font-fira-code text-green-400 text-sm">SYSTEM ONLINE</span>
-                <div className="w-2 h-2 bg-green-400 rounded-full pulse-neon"></div>
-              </div>
             </div>
             
-            <div className="terminal-screen">
-              <div className="terminal-text">
-                <div className="text-green-400 mb-4">
-                  {'>'}neural_interface.init()<br/>
-                  Loading consciousness matrix...<br/>
-                  <span className="text-cyan-300">
-                    ╔════════════════════════════════════╗<br/>
-                    ║ STATUS: ONLINE AND OPERATIONAL     ║<br/>
-                    ║ LOCATION: DIGITAL_REALM://MATRIX   ║<br/>
-                    ║ EXPERIENCE: 5+ YEARS ACTIVE        ║<br/>
-                    ║ PROTOCOLS: REACT | NODE | PYTHON   ║<br/>
-                    ╚════════════════════════════════════╝
-                  </span>
-                </div>
+            <div className="terminal-text max-w-2xl mx-auto">
+              <div className="text-green-400">
+                {'>'} system.info --user="john_developer"<br/>
+                Loading profile...<br/>
+                <span className="text-cyan-300">
+                  Status: Online and ready to build amazing things<br/>
+                  Location: San Francisco, CA<br/>
+                  Experience: 5+ years in web development<br/>
+                  Specialties: React, Node.js, Python, UI/UX Design
+                </span>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4">
               <ProjectCard
-                title="QUANTUM_COMMERCE.EXE"
-                description="Advanced neural commerce platform with quantum encryption, biometric auth, and holographic payment processing. Features real-time data streams and AI-driven analytics."
-                tech={['React', 'Node.js', 'PostgreSQL', 'Quantum-API']}
+                title="E-Commerce Platform"
+                description="Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard."
+                tech={['React', 'Node.js', 'PostgreSQL', 'Stripe']}
                 liveUrl="#"
                 githubUrl="#"
               />
               <ProjectCard
-                title="NEXUS_TASKNET.EXE"
-                description="Cybernetic task management system with real-time neural sync, drag-and-drop matrix interface, and multi-user consciousness linking capabilities."
-                tech={['Vue.js', 'Express', 'Socket.io', 'NeuroDB']}
+                title="Task Management App"
+                description="Collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features."
+                tech={['Vue.js', 'Express', 'Socket.io', 'MongoDB']}
                 liveUrl="#"
                 githubUrl="#"
               />
@@ -68,49 +59,48 @@ const Index = () => {
     },
     {
       id: 'about',
-      label: 'Profile',
-      icon: <User size={16} />,
+      label: 'About',
+      icon: <User size={14} />,
       content: (
-        <TerminalSection title="User Profile">
-          <div className="space-y-8">
+        <TerminalSection title="About Me">
+          <div className="space-y-6">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="scan-line">
-                <h2 className="font-orbitron text-3xl font-black text-cyan-400 mb-6 uppercase tracking-wider neon-glow">
-                  <Zap className="inline mr-2" size={24} />
-                  Background_Data
+              <div>
+                <h2 className="font-terminus text-2xl font-bold text-retro-darkblue mb-4">
+                  Background
                 </h2>
-                <div className="space-y-4 text-gray-300 font-fira-code leading-relaxed">
-                  <p>
-                    I'm a cybernetic developer interfacing between the digital realm and 
-                    reality for over 5 cycles. I specialize in creating neural pathways 
-                    through code, merging retro-futuristic aesthetics with cutting-edge protocols.
-                  </p>
-                  <p>
-                    When not jacked into the mainframe, I explore new data dimensions, 
-                    contribute to open-source neural networks, and decode vintage cyberpunk archives.
-                  </p>
-                </div>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  I'm a passionate full-stack developer with over 5 years of experience 
+                  creating digital solutions. I love combining the nostalgia of 90s computing 
+                  with modern development practices.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  When I'm not coding, you can find me exploring new technologies, 
+                  contributing to open source projects, or playing retro video games.
+                </p>
               </div>
               
-              <div className="scan-line">
-                <h2 className="font-orbitron text-3xl font-black text-magenta-400 mb-6 uppercase tracking-wider neon-glow">
-                  <HardDrive className="inline mr-2" size={24} />
-                  Core_Modules
+              <div>
+                <h2 className="font-terminus text-2xl font-bold text-retro-darkblue mb-4">
+                  Skills
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {[
-                    { category: 'Frontend_Neural', skills: ['React.Neural', 'Vue.Quantum', 'TypeScript.AI', 'Tailwind.Matrix'] },
-                    { category: 'Backend_Core', skills: ['Node.Nexus', 'Python.Cyber', 'Express.Net', 'FastAPI.Turbo'] },
-                    { category: 'DataBanks', skills: ['PostgreSQL.Prime', 'MongoDB.Mesh', 'Redis.Cache', 'GraphQL.Link'] },
-                    { category: 'CyberTools', skills: ['Git.Version', 'Docker.Container', 'AWS.Cloud', 'Figma.Design'] },
+                    { category: 'Frontend', skills: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS'] },
+                    { category: 'Backend', skills: ['Node.js', 'Python', 'Express', 'FastAPI'] },
+                    { category: 'Database', skills: ['PostgreSQL', 'MongoDB', 'Redis'] },
+                    { category: 'Tools', skills: ['Git', 'Docker', 'AWS', 'Figma'] },
                   ].map((group) => (
-                    <div key={group.category} className="project-card">
-                      <h3 className="font-orbitron font-bold text-lg text-blue-400 mb-3 uppercase tracking-wide">
+                    <div key={group.category} className="retro-window p-3">
+                      <h3 className="font-terminus font-semibold text-sm text-retro-darkblue mb-2">
                         {group.category}
                       </h3>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1">
                         {group.skills.map((skill) => (
-                          <span key={skill} className="skill-chip">
+                          <span
+                            key={skill}
+                            className="px-2 py-1 bg-retro-gray border border-retro-darkgray text-xs font-terminus"
+                          >
                             {skill}
                           </span>
                         ))}
@@ -126,37 +116,37 @@ const Index = () => {
     },
     {
       id: 'projects',
-      label: 'Archives',
-      icon: <Monitor size={16} />,
+      label: 'Projects',
+      icon: <Monitor size={14} />,
       content: (
-        <TerminalSection title="Project Archives">
-          <div className="space-y-8">
-            <div className="grid gap-8">
+        <TerminalSection title="My Projects">
+          <div className="space-y-6">
+            <div className="grid gap-6">
               <ProjectCard
-                title="RETRO_PORTFOLIO.NEURAL"
-                description="90s anime-inspired digital consciousness interface built with React neural pathways and Tailwind matrix styling. Features terminal animations, neon aesthetics, and nostalgic UI elements."
-                tech={['React.Neural', 'TypeScript.AI', 'Tailwind.Matrix', 'Framer.Motion']}
+                title="Retro Portfolio Website"
+                description="A 90s-inspired portfolio website built with React and Tailwind CSS. Features include terminal-style animations, window frames, and nostalgic design elements."
+                tech={['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion']}
                 liveUrl="#"
                 githubUrl="#"
               />
               <ProjectCard
-                title="QUANTUM_CHAT.NEXUS"
-                description="Real-time consciousness synchronization platform with quantum tunneling, private neural channels, and emotion-based reactions. Deployed across multiple dimensional nodes."
-                tech={['React.Quantum', 'Socket.Neural', 'Express.Net', 'Redis.Cache', 'AWS.Dimension']}
+                title="Real-time Chat Application"
+                description="WebSocket-based chat application with rooms, private messaging, and emoji reactions. Built with modern web technologies and deployed on AWS."
+                tech={['React', 'Socket.io', 'Express', 'Redis', 'AWS']}
                 liveUrl="#"
                 githubUrl="#"
               />
               <ProjectCard
-                title="DATA_VISUALIZER.MATRIX"
-                description="Interactive data consciousness dashboard with multi-dimensional chart rendering, neural filtering, and quantum export functionality. Processes massive data streams efficiently."
-                tech={['Vue.Cyber', 'D3.Neural', 'Python.Matrix', 'FastAPI.Turbo', 'PostgreSQL.Prime']}
+                title="Data Visualization Dashboard"
+                description="Interactive dashboard for data analysis with multiple chart types, filtering capabilities, and export functionality. Processes large datasets efficiently."
+                tech={['Vue.js', 'D3.js', 'Python', 'FastAPI', 'PostgreSQL']}
                 liveUrl="#"
                 githubUrl="#"
               />
               <ProjectCard
-                title="MOBILE_PWA.NEXUS"
-                description="Progressive consciousness application with offline neural caching, quantum push notifications, and responsive interface adaptation. Provides native-like experience across all devices."
-                tech={['React.Mobile', 'ServiceWorkers.Neural', 'IndexedDB.Cache', 'WebPush.Quantum']}
+                title="Mobile-First PWA"
+                description="Progressive Web App with offline capabilities, push notifications, and responsive design. Provides native app-like experience across all devices."
+                tech={['React', 'Service Workers', 'IndexedDB', 'WebPush']}
                 liveUrl="#"
                 githubUrl="#"
               />
@@ -167,92 +157,91 @@ const Index = () => {
     },
     {
       id: 'contact',
-      label: 'Connect',
-      icon: <Wifi size={16} />,
+      label: 'Contact',
+      icon: <Mail size={14} />,
       content: (
-        <TerminalSection title="Establish Connection">
-          <div className="space-y-8">
+        <TerminalSection title="Get In Touch">
+          <div className="space-y-6">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="scan-line">
-                <h2 className="font-orbitron text-3xl font-black text-green-400 mb-6 uppercase tracking-wider neon-glow">
-                  Neural_Link
+              <div>
+                <h2 className="font-terminus text-2xl font-bold text-retro-darkblue mb-4">
+                  Let's Connect
                 </h2>
-                <p className="text-gray-300 font-fira-code leading-relaxed mb-8">
-                  Ready to establish quantum communication protocols. 
-                  Interested in collaborative neural projects and consciousness-expanding ventures.
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  I'm always interested in new opportunities, collaborations, 
+                  and interesting projects. Feel free to reach out!
                 </p>
                 
-                <div className="space-y-6">
-                  <div className="project-card">
-                    <div className="flex items-center gap-4">
-                      <Mail className="text-cyan-400" size={24} />
+                <div className="space-y-4">
+                  <div className="retro-window p-4">
+                    <div className="flex items-center gap-3">
+                      <Mail className="text-retro-darkblue" size={20} />
                       <div>
-                        <div className="font-orbitron font-bold text-cyan-400 uppercase">Quantum_Mail</div>
-                        <div className="text-sm text-gray-400 font-fira-code">cyber.dev@neural.net</div>
+                        <div className="font-terminus font-semibold">Email</div>
+                        <div className="text-sm text-gray-600">john@developer.com</div>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="project-card">
-                    <div className="flex items-center gap-4">
-                      <Github className="text-magenta-400" size={24} />
+                  <div className="retro-window p-4">
+                    <div className="flex items-center gap-3">
+                      <Github className="text-retro-darkblue" size={20} />
                       <div>
-                        <div className="font-orbitron font-bold text-magenta-400 uppercase">Code_Archive</div>
-                        <div className="text-sm text-gray-400 font-fira-code">github.com/cyber-developer</div>
+                        <div className="font-terminus font-semibold">GitHub</div>
+                        <div className="text-sm text-gray-600">github.com/johndeveloper</div>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="project-card">
-                    <div className="flex items-center gap-4">
-                      <Linkedin className="text-blue-400" size={24} />
+                  <div className="retro-window p-4">
+                    <div className="flex items-center gap-3">
+                      <Linkedin className="text-retro-darkblue" size={20} />
                       <div>
-                        <div className="font-orbitron font-bold text-blue-400 uppercase">Neural_Network</div>
-                        <div className="text-sm text-gray-400 font-fira-code">linkedin.com/in/cyber-dev</div>
+                        <div className="font-terminus font-semibold">LinkedIn</div>
+                        <div className="text-sm text-gray-600">linkedin.com/in/johndeveloper</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className="scan-line">
-                <h2 className="font-orbitron text-3xl font-black text-yellow-400 mb-6 uppercase tracking-wider neon-glow">
-                  Transmit_Data
+              <div>
+                <h2 className="font-terminus text-2xl font-bold text-retro-darkblue mb-4">
+                  Send Message
                 </h2>
-                <form className="space-y-6">
+                <form className="space-y-4">
                   <div>
-                    <label className="block font-orbitron text-sm font-bold mb-2 text-cyan-400 uppercase tracking-wide">
-                      User_ID
+                    <label className="block font-terminus text-sm font-semibold mb-1">
+                      Name
                     </label>
                     <input
                       type="text"
-                      className="w-full p-3 bg-black/50 border-2 border-cyan-400/50 text-cyan-400 font-fira-code text-sm focus:border-cyan-400 focus:outline-none focus:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all"
-                      placeholder="Enter your identifier..."
+                      className="w-full p-2 border-2 border-retro-border bg-white font-terminus text-sm"
+                      placeholder="Your name"
                     />
                   </div>
                   <div>
-                    <label className="block font-orbitron text-sm font-bold mb-2 text-cyan-400 uppercase tracking-wide">
-                      Neural_Address
+                    <label className="block font-terminus text-sm font-semibold mb-1">
+                      Email
                     </label>
                     <input
                       type="email"
-                      className="w-full p-3 bg-black/50 border-2 border-cyan-400/50 text-cyan-400 font-fira-code text-sm focus:border-cyan-400 focus:outline-none focus:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all"
-                      placeholder="your.neural@address.net"
+                      className="w-full p-2 border-2 border-retro-border bg-white font-terminus text-sm"
+                      placeholder="your.email@example.com"
                     />
                   </div>
                   <div>
-                    <label className="block font-orbitron text-sm font-bold mb-2 text-cyan-400 uppercase tracking-wide">
-                      Data_Stream
+                    <label className="block font-terminus text-sm font-semibold mb-1">
+                      Message
                     </label>
                     <textarea
                       rows={4}
-                      className="w-full p-3 bg-black/50 border-2 border-cyan-400/50 text-cyan-400 font-fira-code text-sm resize-none focus:border-cyan-400 focus:outline-none focus:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all"
-                      placeholder="Transmit your neural data..."
+                      className="w-full p-2 border-2 border-retro-border bg-white font-terminus text-sm resize-none"
+                      placeholder="Your message here..."
                     />
                   </div>
-                  <button type="submit" className="anime-button w-full">
-                    <Code className="inline mr-2" size={16} />
-                    Initialize_Transmission
+                  <button type="submit" className="retro-button">
+                    Send Message
                   </button>
                 </form>
               </div>
@@ -264,27 +253,24 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen p-4 md:p-8 relative z-10">
-      <div className="max-w-7xl mx-auto">
-        <WindowFrame title="NEURO_INTERFACE.EXE - Cyber Developer Console" className="shadow-2xl">
+    <div className="min-h-screen p-4 md:p-8">
+      <div className="max-w-6xl mx-auto">
+        <WindowFrame title="Portfolio.exe - John Developer" className="shadow-window">
           <TabNavigation tabs={tabs} />
         </WindowFrame>
         
-        {/* Anime-style Status Bar */}
-        <div className="mt-6 anime-window p-4 flex items-center justify-between font-fira-code text-sm">
-          <div className="flex items-center gap-6">
-            <span className="text-green-400 font-bold uppercase">System Ready</span>
-            <span className="text-cyan-400">|</span>
-            <span className="flex items-center gap-2 text-cyan-400">
-              <div className="w-2 h-2 bg-green-400 rounded-full pulse-neon"></div>
-              Neural Link Active
+        {/* Status Bar */}
+        <div className="mt-4 bg-retro-gray border-2 border-retro-border p-2 flex items-center justify-between text-xs font-terminus">
+          <div className="flex items-center gap-4">
+            <span>Ready</span>
+            <span>|</span>
+            <span className="flex items-center gap-1">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              Online
             </span>
-            <span className="text-cyan-400">|</span>
-            <span className="text-magenta-400">Matrix Connected</span>
           </div>
-          <div className="flex items-center gap-4 text-blue-400">
+          <div className="flex items-center gap-2">
             <span>{new Date().toLocaleDateString()}</span>
-            <span className="text-cyan-400">•</span>
             <span>{new Date().toLocaleTimeString()}</span>
           </div>
         </div>

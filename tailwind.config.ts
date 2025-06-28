@@ -20,9 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'mono': ['Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
-				'fira-code': ['Fira Code', 'monospace'],
-				'orbitron': ['Orbitron', 'sans-serif'],
+				'mono': ['JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'monospace'],
+				'terminus': ['JetBrains Mono', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -68,14 +67,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// 90s Anime Tech color palette
-				neon: {
-					cyan: '#00FFFF',
-					magenta: '#FF00FF',
-					green: '#00FF00',
-					blue: '#00BFFF',
-					yellow: '#FFFF00',
-					pink: '#FF1493',
+				// 90s color palette
+				retro: {
+					gray: '#c0c0c0',
+					darkgray: '#808080',
+					blue: '#0000ff',
+					darkblue: '#000080',
+					window: '#f0f0f0',
+					border: '#404040',
+					highlight: '#316ac5',
 				}
 			},
 			borderRadius: {
@@ -103,7 +103,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(20px)'
+						transform: 'translateY(10px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -113,37 +113,21 @@ export default {
 				'tab-open': {
 					'0%': {
 						opacity: '0',
-						transform: 'scale(0.95) rotateX(10deg)'
+						transform: 'scale(0.95)'
 					},
 					'100%': {
 						opacity: '1',
-						transform: 'scale(1) rotateX(0deg)'
+						transform: 'scale(1)'
 					}
-				},
-				'neon-pulse': {
-					'0%, 100%': {
-						textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor'
-					},
-					'50%': {
-						textShadow: '0 0 2px currentColor, 0 0 5px currentColor, 0 0 8px currentColor'
-					}
-				},
-				'scan-line': {
-					'0%': { left: '-100%' },
-					'100%': { left: '100%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out',
-				'tab-open': 'tab-open 0.3s ease-out',
-				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
-				'scan-line': 'scan-line 3s linear infinite'
+				'fade-in': 'fade-in 0.3s ease-out',
+				'tab-open': 'tab-open 0.2s ease-out'
 			},
 			boxShadow: {
-				'neon': '0 0 20px rgba(0, 255, 255, 0.5)',
-				'neon-strong': '0 0 40px rgba(0, 255, 255, 0.7)',
 				'retro': 'inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff',
 				'retro-pressed': 'inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey',
 				'window': '2px 2px 4px rgba(0,0,0,0.3)'
