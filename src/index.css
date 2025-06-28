@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -98,6 +92,56 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-retro-gray text-foreground font-terminus;
+    background: linear-gradient(135deg, #c0c0c0 0%, #b0b0b0 100%);
+    min-height: 100vh;
+  }
+}
+
+/* 90s UI Elements */
+@layer components {
+  .retro-window {
+    @apply bg-retro-window border-2;
+    border-color: #dfdfdf #0a0a0a #0a0a0a #dfdfdf;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .retro-button {
+    @apply px-4 py-2 bg-retro-gray border-2 font-terminus text-sm font-medium;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    transition: all 0.1s ease;
+  }
+
+  .retro-button:hover {
+    @apply bg-gray-200;
+  }
+
+  .retro-button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    @apply bg-gray-300;
+  }
+
+  .retro-tab {
+    @apply px-4 py-2 bg-retro-gray border-2 font-terminus text-sm font-medium cursor-pointer;
+    border-color: #ffffff #808080 transparent #ffffff;
+    border-bottom: none;
+    margin-bottom: -2px;
+    transition: all 0.2s ease;
+  }
+
+  .retro-tab.active {
+    @apply bg-retro-window;
+    border-color: #ffffff #808080 #f0f0f0 #ffffff;
+    z-index: 10;
+    position: relative;
+  }
+
+  .retro-tab:hover:not(.active) {
+    @apply bg-gray-200;
+  }
+
+  .terminal-text {
+    @apply font-terminus text-green-400 bg-black p-4 rounded;
+    font-family: 'JetBrains Mono', monospace;
   }
 }
