@@ -26,7 +26,7 @@ const Index = () => {
             
             <div className="terminal-text max-w-2xl mx-auto">
               <div className="text-green-400">
-                > system.info --user="john_developer"<br/>
+                {'>'} system.info --user="john_developer"<br/>
                 Loading profile...<br/>
                 <span className="text-cyan-300">
                   Status: Online and ready to build amazing things<br/>
