@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Zap } from 'lucide-react';
 
 interface ProjectCardProps {
   title: string;
@@ -12,34 +12,34 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, tech, liveUrl, githubUrl }: ProjectCardProps) => {
   return (
-    <div className="retro-window p-4 hover:shadow-lg transition-shadow duration-300">
-      <h3 className="font-terminus font-semibold text-lg mb-2 text-retro-darkblue">
-        {title}
-      </h3>
-      <p className="text-gray-700 mb-3 text-sm leading-relaxed">
+    <div className="project-card group">
+      <div className="flex items-center gap-2 mb-4">
+        <Zap size={16} className="text-cyan-400 group-hover:text-magenta-400 transition-colors" />
+        <h3 className="font-orbitron font-black text-xl text-cyan-400 group-hover:text-magenta-400 transition-colors uppercase tracking-wider neon-glow">
+          {title}
+        </h3>
+      </div>
+      <p className="text-gray-300 mb-4 text-sm leading-relaxed font-fira-code">
         {description}
       </p>
-      <div className="flex flex-wrap gap-1 mb-3">
+      <div className="flex flex-wrap gap-2 mb-6">
         {tech.map((item, index) => (
-          <span
-            key={index}
-            className="px-2 py-1 bg-retro-gray border border-retro-darkgray text-xs font-terminus"
-          >
+          <span key={index} className="skill-chip">
             {item}
           </span>
         ))}
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-3">
         {liveUrl && (
-          <button className="retro-button flex items-center gap-1 text-xs">
+          <button className="anime-button flex items-center gap-2 text-xs">
             <ExternalLink size={12} />
-            Live Demo
+            Launch_Demo
           </button>
         )}
         {githubUrl && (
-          <button className="retro-button flex items-center gap-1 text-xs">
+          <button className="anime-button flex items-center gap-2 text-xs">
             <Github size={12} />
-            Code
+            View_Code
           </button>
         )}
       </div>

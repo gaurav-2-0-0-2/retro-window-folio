@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { User, Mail, Home, Monitor } from 'lucide-react';
 
 interface Tab {
   id: string;
@@ -21,12 +20,12 @@ const TabNavigation = ({ tabs }: TabNavigationProps) => {
   return (
     <div className="w-full">
       {/* Tab Headers */}
-      <div className="flex border-b-2 border-retro-border bg-retro-gray">
+      <div className="flex bg-gradient-to-r from-slate-900 to-slate-800 p-2 gap-1">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`retro-tab flex items-center gap-2 ${
+            className={`anime-tab flex items-center gap-2 ${
               activeTab === tab.id ? 'active' : ''
             }`}
           >
@@ -37,7 +36,7 @@ const TabNavigation = ({ tabs }: TabNavigationProps) => {
       </div>
 
       {/* Tab Content */}
-      <div className="bg-retro-window p-6 min-h-[400px] animate-tab-open">
+      <div className="bg-gradient-to-br from-slate-900/95 to-slate-800/95 backdrop-blur-sm p-8 min-h-[500px] animate-tab-open">
         {activeTabContent}
       </div>
     </div>
