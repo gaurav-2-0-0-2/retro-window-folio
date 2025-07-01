@@ -17,22 +17,22 @@ const Index = () => {
           <div className="space-y-6">
             <div className="text-center">
               <h1 className="font-terminus text-4xl font-bold text-retro-darkblue mb-2">
-                John Developer
+                Gaurav Tak
               </h1>
               <p className="text-xl text-retro-darkgray font-terminus">
-                Full Stack Developer & UI/UX Designer
+                Full Stack Software Engineer 
               </p>
             </div>
             
             <div className="terminal-text max-w-2xl mx-auto">
               <div className="text-green-400">
-                {'>'} system.info --user="john_developer"<br/>
+                {'>'} system.info --user="gaurav_tak"<br/>
                 Loading profile...<br/>
                 <span className="text-cyan-300">
                   Status: Online and ready to build amazing things<br/>
-                  Location: San Francisco, CA<br/>
-                  Experience: 5+ years in web development<br/>
-                  Specialties: React, Node.js, Python, UI/UX Design
+                  Location: Jaipur, India<br/>
+                  Experience: 2+ years in web development<br/>
+                  Specialties: Typescript, Python, Go, Node.js, Nest.js, Angular, React
                 </span>
               </div>
             </div>
@@ -70,13 +70,12 @@ const Index = () => {
                   Background
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  I'm a passionate full-stack developer with over 5 years of experience 
-                  creating digital solutions. I love combining the nostalgia of 90s computing 
-                  with modern development practices.
+                  I'm a passionate full-stack software engineer with over 2 years of experience 
+                  creating digital solutions. 
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   When I'm not coding, you can find me exploring new technologies, 
-                  contributing to open source projects, or playing retro video games.
+                  or playing retro video games.
                 </p>
               </div>
               
@@ -86,10 +85,10 @@ const Index = () => {
                 </h2>
                 <div className="space-y-3">
                   {[
-                    { category: 'Frontend', skills: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS'] },
-                    { category: 'Backend', skills: ['Node.js', 'Python', 'Express', 'FastAPI'] },
+                    { category: 'Frontend', skills: ['React', 'Angular', 'TypeScript'] },
+                    { category: 'Backend', skills: ['Node.js', 'Nest.js', 'Python', 'Express', 'FastAPI'] },
                     { category: 'Database', skills: ['PostgreSQL', 'MongoDB', 'Redis'] },
-                    { category: 'Tools', skills: ['Git', 'Docker', 'AWS', 'Figma'] },
+                    { category: 'Tools', skills: ['Git', 'Docker', 'AWS', 'Figma', 'GCP'] },
                   ].map((group) => (
                     <div key={group.category} className="retro-window p-3">
                       <h3 className="font-terminus font-semibold text-sm text-retro-darkblue mb-2">
